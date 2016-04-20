@@ -9,7 +9,7 @@ module OmniAuth
 
       option :client_options, {
         scheme: :header,
-        site: 'http://connectapitest.garmin.com'
+        site: 'http://connectapitest.garmin.com',
         request_token_path: '/oauth-service-1.0/oauth/request_token',
         access_token_path: '/oauth-service-1.0/oauth/request_token',
         authorize_url: 'http://connecttest.garmin.com/oauthConfirm'
