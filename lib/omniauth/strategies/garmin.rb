@@ -8,7 +8,7 @@ module OmniAuth
       option :name, "garmin"
 
       option :client_options, {
-        scheme: :body,
+        scheme: :header,
         site: 'http://gcsapitest.garmin.com',
         request_token_path: '/gcs-api/oauth/request_token',
         access_token_path: '/gcs-api/oauth/access_token',
