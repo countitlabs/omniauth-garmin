@@ -11,7 +11,7 @@ module OmniAuth
         scheme: :header,
         site: 'http://connectapitest.garmin.com',
         request_token_path: '/oauth-service-1.0/oauth/request_token',
-        access_token_path: '/oauth-service-1.0/oauth/request_token',
+        access_token_path: '/oauth-service-1.0/oauth/access_token',
         authorize_url: 'http://connecttest.garmin.com/oauthConfirm'
       }
 
@@ -30,6 +30,12 @@ module OmniAuth
         consumer.http.open_timeout = options.open_timeout if options.open_timeout
         consumer.http.read_timeout = options.read_timeout if options.read_timeout
         consumer
+      end
+
+      def callback_phase
+        puts "XXX----- GARMIN-OAUTH - CALLBACK PHASE"
+        ptus "XXX----- GARMIN-OAUTH - This should get access_token"
+        super
       end
 
       class GarminConsumer < ::OAuth::Consumer
