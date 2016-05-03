@@ -33,8 +33,6 @@ module OmniAuth
       end
 
       def callback_phase
-        puts "XXX----- GARMIN-OAUTH - CALLBACK PHASE"
-        puts "XXX----- GARMIN-OAUTH - This should get access_token"
         super
       end
 
