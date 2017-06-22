@@ -6,7 +6,7 @@ module OmniAuth
     class Garmin < OmniAuth::Strategies::OAuth
 
       option :name, "garmin"
-
+=begin
       option :client_options, {
         scheme: :header,
         site: 'http://connectapi.garmin.com',
@@ -14,7 +14,16 @@ module OmniAuth
         access_token_path: '/oauth-service-1.0/oauth/access_token',
         authorize_url: 'http://connect.garmin.com/oauthConfirm'
       }
-
+=end
+      
+      option :client_options, {
+        scheme: :header,
+        site: 'http://connectapitest.garmin.com',
+        request_token_path: '/oauth-service-1.0/oauth/request_token',
+        access_token_path: '/oauth-service-1.0/oauth/access_token',
+        authorize_url: 'http://connecttest.garmin.com/oauthConfirm'
+      }
+      
       uid do
         access_token.token
       end
